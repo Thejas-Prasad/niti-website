@@ -1,0 +1,70 @@
+.about-us {
+    padding: 80px 20px;
+    background: linear-gradient(135deg, #f0f4f8, #ffffff);
+    text-align: center;
+  }
+  
+  .about-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    background-color: #ffffff;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+  }
+  
+  .about-us h2 {
+    font-size: 3em;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .about-description {
+    font-size: 1.2em;
+    color: #555;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto 40px;
+  }
+  
+  .core-values {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .value-card {
+    background-color: #f8f9fa;
+    border: 1px solid #e0e0e0;
+    padding: 20px;
+    width: 300px;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .value-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.1);
+  }
+  
+  .value-card h3 {
+    font-size: 1.5em;
+    color: #007BFF;
+    margin-bottom: 10px;
+  }
+  
+  .value-card p {
+    color: #666;
+    font-size: 1em;
+    line-height: 1.5;
+  }
+  
+  /* Responsive design */
+  @media (max-width: 768px) {
+    .core-values {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  
