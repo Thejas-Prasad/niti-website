@@ -1,92 +1,194 @@
+/* General Styles */
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
 .hero {
-  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height: 100vh;
+  background: #ffffff;
+  color: #333;
+  position: relative;
+  overflow: hidden;
+  padding: 3rem;
+}
+
+/* Hero Content */
+.hero-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-left {
+  max-width: 50%;
+  animation: fadeInLeft 1.5s ease-in-out;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: bold;
+  font-weight: 800;
+  color: #1e88e5;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.05em;
+}
+
+.hero-description {
+  font-size: 1.4rem;
+  line-height: 1.8;
+  margin-bottom: 3rem;
+  color: #444;
+  font-weight: 500;
+}
+
+/* Buttons */
+.button-group {
+  display: flex;
+  gap: 1.5rem; /* Adds padding between buttons */
+}
+
+.primary-button {
+  background: #1e88e5;
+  color: white;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  border-radius: 30px;
+  text-transform: none;
+  font-weight: bold;
+  transition: all 0.4s ease;
+  box-shadow: 0px 5px 15px rgba(30, 136, 229, 0.3);
+}
+
+.primary-button:hover {
+  background: #1565c0;
+  transform: scale(1.05);
+  box-shadow: 0px 8px 20px rgba(30, 136, 229, 0.5);
+}
+
+.secondary-button {
+  border: 2px solid #1e88e5;
+  color: #1e88e5;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  border-radius: 30px;
+  text-transform: none;
+  font-weight: bold;
+  transition: all 0.4s ease;
+}
+
+.secondary-button:hover {
+  background: #f1f1f1;
+  transform: scale(1.05);
+}
+
+/* Hero Images */
+.hero-right {
+  max-width: 50%;
+  position: relative;
+  animation: fadeInRight 1.5s ease-in-out;
+}
+
+.image-stack {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
-  color: #fff;
-  text-align: center;
-}
-
-.hero-background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
 }
 
 .image {
+  width: 350px;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.image.overlay {
   position: absolute;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-  opacity: 0;
-  animation: fade 18s infinite;
+  top: 40px;
+  left: 40px;
+  opacity: 0.9;
+  transform: rotate(-7deg);
 }
 
-.image-1 {
-  background-image: url('../assets/image.png');
-  animation-delay: 0s;
+.image:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.2);
 }
 
-.image-2 {
-  background-image: url('../assets/rust-image.jpg');
-  animation-delay: 6s;
+/* Random Rust Logo */
+.rust-logo {
+  position: absolute;
+  width: 100px;
+  height: auto;
+  transition: transform 0.5s ease-in-out;
+  animation: rustMove 5s infinite ease-in-out;
+  pointer-events: none;
+  opacity: 0.8;
+  filter: drop-shadow(0px 5px 10px rgba(0, 0, 0, 0.2));
 }
 
-.image-3 {
-  background-image: url('../assets/rust-image2.jpg');
-  animation-delay: 12s;
+/* Background Glow Effect */
+.hero:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(30, 136, 229, 0.2), transparent);
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  animation: pulse 3s infinite;
 }
 
-@keyframes fade {
-  0% {
-    opacity: 0;
+/* Animations */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(-10px);
   }
-  20% {
+  50% {
+    transform: translateY(10px);
+  }
+}
+
+
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
     opacity: 1;
+    transform: translateX(0);
   }
-  33% {
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
     opacity: 1;
-  }
-  53% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 0;
+    transform: translateX(0);
   }
 }
 
-.hero-content {
-  position: relative;
-  z-index: 2;
-  max-width: 800px;
-  padding: 0 20px;
-}
-
-h1 {
-  font-size: 3em;
-  margin-bottom: 20px;
-}
-
-p {
-  font-size: 1.5em;
-  margin-bottom: 30px;
-}
-
-.download-button {
-  background-color: #007bff;
-  color: #fff;
-  padding: 12px 24px;
-  border-radius: 8px;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
-}
-
-.download-button:hover {
-  background-color: #0056b3;
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
 }
