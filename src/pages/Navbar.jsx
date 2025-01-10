@@ -1,39 +1,56 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
+import Logo from "../assets/rust-logo.gif"; // replace with your logo
 
 const Navbar = () => {
-  const [isMobile, setIsMobile] = useState(false);
-
   return (
     <nav className="navbar">
-      <div className="navbar-content">
+      <div className="navbar-container">
+        {/* Logo */}
         <div className="navbar-logo">
-          <h2>Niti</h2>
+          <img src={Logo} alt="Logo" className="navbar-logo-img" />
+          <span className="navbar-brand">Niti Development</span>
         </div>
-        <ul className={`nav-links ${isMobile ? "mobile" : ""}`}>
+
+        {/* Navbar Links */}
+        <ul className="navbar-links">
           <li>
-            <Link to="/">Home</Link>
+            <Link to="#hero" className="navbar-link">
+              Hero
+            </Link>
           </li>
           <li>
-            <Link to="/info">Info</Link>
+            <Link to="#about" className="navbar-link">
+              About Us
+            </Link>
           </li>
           <li>
-            <Link to="/contact">Contact</Link>
+            <Link to="#documents" className="navbar-link">
+              Documents
+            </Link>
           </li>
           <li>
-            <Link to="/about">About Us</Link>
+            <Link to="#info" className="navbar-link">
+              Info
+            </Link>
           </li>
           <li>
-            <Link to="/documents">Documents</Link>
+            <Link to="#contact" className="navbar-link">
+              Contact
+            </Link>
           </li>
         </ul>
-        <div
-          className="hamburger-menu"
-          onClick={() => setIsMobile(!isMobile)}
+
+        {/* Download Button */}
+        <a
+          href="https://github.com/cyberkutti-iedc/Niti-core"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="navbar-button"
         >
-          ☰
-        </div>
+          Download
+        </a>
       </div>
     </nav>
   );

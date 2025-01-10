@@ -1,7 +1,6 @@
-// Footer.jsx
 import React from "react";
 import "./Footer.css";
-import { FaFacebook, FaTwitter, FaLinkedin, FaGithub } from "react-icons/fa";
+import { Facebook, Twitter, LinkedIn, GitHub } from "@mui/icons-material";
 
 const Footer = () => {
   return (
@@ -53,7 +52,7 @@ const Footer = () => {
               rel="noopener noreferrer"
               className="social-icon"
             >
-              <FaFacebook />
+              <Facebook />
             </a>
             <a
               href="https://twitter.com"
@@ -61,7 +60,7 @@ const Footer = () => {
               rel="noopener noreferrer"
               className="social-icon"
             >
-              <FaTwitter />
+              <Twitter />
             </a>
             <a
               href="https://linkedin.com"
@@ -69,7 +68,7 @@ const Footer = () => {
               rel="noopener noreferrer"
               className="social-icon"
             >
-              <FaLinkedin />
+              <LinkedIn />
             </a>
             <a
               href="https://github.com/cyberkutti-iedc/Niti-core"
@@ -77,7 +76,7 @@ const Footer = () => {
               rel="noopener noreferrer"
               className="social-icon"
             >
-              <FaGithub />
+              <GitHub />
             </a>
           </div>
         </div>
