@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Button, Typography, Box, Container, Stack } from "@mui/material";
-import "./Hero.css";
+import "./hero.css";
 import Image1 from "../assets/image1.png";
 import Image2 from "../assets/image2.jpg";
 import RustLogo from "../assets/rust-logo.gif";
